@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.qingcore.com/"/>
-  <updated>2016-11-05T08:39:29.000Z</updated>
+  <updated>2016-11-05T14:04:34.000Z</updated>
   <id>http://www.qingcore.com/</id>
   
   <author>
@@ -14,6 +14,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>科学上网的正确姿势-不会都不好意思说自己是搞技术的</title>
+    <link href="http://www.qingcore.com/2016/11/05/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%A7%BF%E5%8A%BF-%E4%B8%8D%E4%BC%9A%E9%83%BD%E4%B8%8D%E5%A5%BD%E6%84%8F%E6%80%9D%E8%AF%B4%E8%87%AA%E5%B7%B1%E6%98%AF%E6%90%9E%E6%8A%80%E6%9C%AF%E7%9A%84/"/>
+    <id>http://www.qingcore.com/2016/11/05/科学上网的正确姿势-不会都不好意思说自己是搞技术的/</id>
+    <published>2016-11-05T14:03:03.000Z</published>
+    <updated>2016-11-05T14:04:34.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="其他" scheme="http://www.qingcore.com/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+      <category term="科学上网" scheme="http://www.qingcore.com/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"/>
+    
+      <category term="防火墙" scheme="http://www.qingcore.com/tags/%E9%98%B2%E7%81%AB%E5%A2%99/"/>
+    
+      <category term="GFW" scheme="http://www.qingcore.com/tags/GFW/"/>
+    
+      <category term="搬瓦工" scheme="http://www.qingcore.com/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/"/>
+    
+      <category term="蓝灯" scheme="http://www.qingcore.com/tags/%E8%93%9D%E7%81%AF/"/>
+    
+      <category term="lantern" scheme="http://www.qingcore.com/tags/lantern/"/>
+    
+      <category term="Bandwagon" scheme="http://www.qingcore.com/tags/Bandwagon/"/>
+    
+  </entry>
   
   <entry>
     <title>拥抱开源怀抱，我也来分享-SimplifyReader</title>
