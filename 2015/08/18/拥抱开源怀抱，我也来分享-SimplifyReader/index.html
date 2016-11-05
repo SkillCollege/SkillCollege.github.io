@@ -1,0 +1,1116 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="fonts.useso.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="简阅,SimplifyReader,mvp,material-design," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="CHEN TAO" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="一款基于Google Material Design设计开发的Android客户端，包括新闻简读，图片浏览，视频爽看 ，音乐轻听以及二维码扫描五个子模块。项目采取的是MVP架构开发，由于还是摸索阶段，可能不是很规范。但基本上应该是这么个套路，至少我个人认为是这样的~恩，就是这样的！
+效果图
+
+
+
+Demo下载火速跳转 | Download-APK
+模块分析新闻简读
+介绍：API使用的是凤凰新闻客户">
+<meta property="og:type" content="article">
+<meta property="og:title" content="拥抱开源怀抱，我也来分享-SimplifyReader">
+<meta property="og:url" content="http://www.qingcore.com/2015/08/18/拥抱开源怀抱，我也来分享-SimplifyReader/index.html">
+<meta property="og:site_name" content="CHEN TAO">
+<meta property="og:description" content="一款基于Google Material Design设计开发的Android客户端，包括新闻简读，图片浏览，视频爽看 ，音乐轻听以及二维码扫描五个子模块。项目采取的是MVP架构开发，由于还是摸索阶段，可能不是很规范。但基本上应该是这么个套路，至少我个人认为是这样的~恩，就是这样的！
+效果图
+
+
+
+Demo下载火速跳转 | Download-APK
+模块分析新闻简读
+介绍：API使用的是凤凰新闻客户">
+<meta property="og:image" content="https://raw.githubusercontent.com/chentao0707/server/master/SimplifyReader/images/all_in_one.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/chentao0707/server/master/SimplifyReader/images/project.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/chentao0707/server/master/SimplifyReader/images/qrcode.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/chentao0707/server/master/SimplifyReader/images/project_struct.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/chentao0707/server/master/SimplifyReader/images/download.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/SkillCollege/server/master/SimplifyReader/images/pay_qrcode.png">
+<meta property="og:updated_time" content="2016-11-05T08:39:29.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="拥抱开源怀抱，我也来分享-SimplifyReader">
+<meta name="twitter:description" content="一款基于Google Material Design设计开发的Android客户端，包括新闻简读，图片浏览，视频爽看 ，音乐轻听以及二维码扫描五个子模块。项目采取的是MVP架构开发，由于还是摸索阶段，可能不是很规范。但基本上应该是这么个套路，至少我个人认为是这样的~恩，就是这样的！
+效果图
+
+
+
+Demo下载火速跳转 | Download-APK
+模块分析新闻简读
+介绍：API使用的是凤凰新闻客户">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/chentao0707/server/master/SimplifyReader/images/all_in_one.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://www.qingcore.com/2015/08/18/拥抱开源怀抱，我也来分享-SimplifyReader/"/>
+
+
+  <title> 拥抱开源怀抱，我也来分享-SimplifyReader | CHEN TAO </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=1260741168&web_id=1260741168" language="JavaScript"></script>
+  </div>
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">CHEN TAO</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">An android developer</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                拥抱开源怀抱，我也来分享-SimplifyReader
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-08-18T22:33:09+08:00" content="2015-08-18">
+              2015-08-18
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/opensource/" itemprop="url" rel="index">
+                    <span itemprop="name">opensource</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/08/18/拥抱开源怀抱，我也来分享-SimplifyReader/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/18/拥抱开源怀抱，我也来分享-SimplifyReader/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-file-o"></i>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>一款基于Google Material Design设计开发的Android客户端，包括新闻简读，图片浏览，视频爽看 ，音乐轻听以及二维码扫描五个子模块。项目采取的是MVP架构开发，由于还是摸索阶段，可能不是很规范。但基本上应该是这么个套路，至少我个人认为是这样的~恩，就是这样的！</p>
+<h1 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h1><p><img src="https://raw.githubusercontent.com/chentao0707/server/master/SimplifyReader/images/all_in_one.jpg" alt="image"></p>
+<p><img src="https://raw.githubusercontent.com/chentao0707/server/master/SimplifyReader/images/project.gif" alt="image"></p>
+<p><img src="https://raw.githubusercontent.com/chentao0707/server/master/SimplifyReader/images/qrcode.gif" alt="image"></p>
+<p><img src="https://raw.githubusercontent.com/chentao0707/server/master/SimplifyReader/images/project_struct.png" alt="image"></p>
+<h2 id="Demo下载"><a href="#Demo下载" class="headerlink" title="Demo下载"></a>Demo下载</h2><p><a href="https://fir.im/simplifyreader" target="_blank" rel="external">火速跳转</a> | <a href="https://raw.githubusercontent.com/chentao0707/server/master/SimplifyReader/apks/app-debug.apk" target="_blank" rel="external">Download-APK</a><br><img src="https://raw.githubusercontent.com/chentao0707/server/master/SimplifyReader/images/download.png" alt="image"></p>
+<h2 id="模块分析"><a href="#模块分析" class="headerlink" title="模块分析"></a>模块分析</h2><h3 id="新闻简读"><a href="#新闻简读" class="headerlink" title="新闻简读"></a>新闻简读</h3><ul>
+<li>介绍：API使用的是凤凰新闻客户端的接口，我只是简单的获取了新闻的列表和详情数据，由于api和凤凰新闻客户端完全一致，鉴于侵权问题我就不开源出来了。至于接口是如何获取的？Google，百度，调试获取日志，我能说的只有这么多。</li>
+<li>功能：列表页使用自定义的ListView(自动加载更多）显示新闻列表，详情使用的是WebView加载，支持滑动返回。对于多图<br>新闻的处理，使用的和主流新闻客户端类似，滑动切换多张图片，可双指缩放图片大小！</li>
+</ul>
+<h3 id="图片浏览"><a href="#图片浏览" class="headerlink" title="图片浏览"></a>图片浏览</h3><ul>
+<li>介绍：API使用的是百度图片的搜索接口，由于网上有很多的开发者开源了这个接口，所以我也就放出来，如有侵权请及时告知。</li>
+<li>功能：列表页使用的瀑布流效果（增加了下拉刷新和上拉加载更多）详情页和列表页的切换增加了一个图片放大或缩小到指定位置的效果，图片也可以双指缩放！</li>
+</ul>
+<h3 id="视频爽看"><a href="#视频爽看" class="headerlink" title="视频爽看"></a>视频爽看</h3><ul>
+<li>介绍：API使用的是优酷开放平台的SDK，不过要吐槽的一点是，优酷的SDK真心不好用，还是Eclipse版本的，我是一点点移植到Android Studio平台的，但是它的接口还是很丰富的，好好的利用一下，还是能够做出一个优秀的APP的。</li>
+<li>功能：列表页使用了Google的CardView，简单的获取了一些视频的基本数据。播放页使用了优酷提供的视频播放器组件，传入视频ID就可以播放视频了，只要调通了SDK，其他的都是一些简单的数据获取！</li>
+</ul>
+<h3 id="音乐轻听"><a href="#音乐轻听" class="headerlink" title="音乐轻听"></a>音乐轻听</h3><ul>
+<li>介绍：API获取的是豆瓣音乐的数据，由于也不是开放API，如有侵权请及时告知。</li>
+<li>功能：播放音乐的界面是我自定义的一个唱机的View，很多思路都是从网上学习借鉴过来的，自己重新造了个轮子。UI和网易云音乐对比的话，只能说是形似神不似了，没有人家做的细致！</li>
+</ul>
+<h3 id="二维码扫描"><a href="#二维码扫描" class="headerlink" title="二维码扫描"></a>二维码扫描</h3><ul>
+<li>介绍：这个完全是我自己单独开发的类库，之前也有开源出来，这次又再一次重构优化，后期会单独剥离二维码扫描模块，做成类库和Demo的形式，提供Android Studio版本。</li>
+<li>功能：扫描界面使用xml进行布局，然后加入属性动画。这样布局更具有优势，更利于多屏幕适配。解码模块使用的是两个主流的开源库Zbar和ZXing，进过多次测试发现，ZBar虽然扫描效率和速度高于ZXing，但是经常扫描出错误的信息，可能由于太灵敏的缘故把，综合二者的优缺点还是建议使用ZXing来解码，并且这个项目还在长期维护更新！</li>
+</ul>
+<h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><ul>
+<li>苦于没有后台支持，找到这些支持JSON数据格式的开放接口可谓是煞费苦心，前前后后尝试了很多次才找到，也感谢网友们提供的接口！</li>
+<li>界面的原型都是我自己构思的，后期的切图美化主要是Chris帮忙完成的，很感谢他业余时间和我一起完成这样一个APP！</li>
+<li>项目中大量使用了Github上面优秀的开源项目，我会列举出来！其他一些代码片段就不一一致谢了，很感谢这些开放源码的技术大牛们，让我学到了很多！</li>
+<li>最后如果觉得我的项目对你有所帮助，请点击我的支付宝付款码请我喝杯咖啡把~当然我也希望你们能够多多<strong>fork</strong>，多多<strong>star</strong>，多多<strong>follow</strong>，这将给我更多的动力开源更多的项目！</li>
+</ul>
+<h2 id="开源项目说明"><a href="#开源项目说明" class="headerlink" title="开源项目说明"></a>开源项目说明</h2><blockquote>
+<p><strong>ButterKnife</strong></p>
+</blockquote>
+<ul>
+<li><p><strong>Link:</strong> <a href="https://github.com/JakeWharton/butterknife" target="_blank" rel="external">https://github.com/JakeWharton/butterknife</a></p>
+</li>
+<li><p><strong>License:</strong> <code>Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</code></p>
+</li>
+</ul>
+<blockquote>
+<p><strong>AndroidTagGroup</strong></p>
+</blockquote>
+<ul>
+<li><p><strong>Link:</strong> <a href="https://github.com/2dxgujun/AndroidTagGroup" target="_blank" rel="external">https://github.com/2dxgujun/AndroidTagGroup</a></p>
+</li>
+<li><p><strong>License:</strong> <code>Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</code></p>
+</li>
+</ul>
+<blockquote>
+<p><strong>NineOldAndroids</strong></p>
+</blockquote>
+<ul>
+<li><p><strong>Link:</strong> <a href="https://github.com/JakeWharton/NineOldAndroids" target="_blank" rel="external">https://github.com/JakeWharton/NineOldAndroids</a></p>
+</li>
+<li><p><strong>License:</strong> <code>Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</code></p>
+</li>
+</ul>
+<blockquote>
+<p><strong>SystemBarTint</strong></p>
+</blockquote>
+<ul>
+<li><p><strong>Link:</strong> <a href="https://github.com/jgilfelt/SystemBarTint" target="_blank" rel="external">https://github.com/jgilfelt/SystemBarTint</a></p>
+</li>
+<li><p><strong>License:</strong> <code>Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</code></p>
+</li>
+</ul>
+<blockquote>
+<p><strong>Android-Universal-Image-Loader</strong></p>
+</blockquote>
+<ul>
+<li><p><strong>Link:</strong> <a href="https://github.com/nostra13/Android-Universal-Image-Loader" target="_blank" rel="external">https://github.com/nostra13/Android-Universal-Image-Loader</a></p>
+</li>
+<li><p><strong>License:</strong> <code>Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</code></p>
+</li>
+</ul>
+<blockquote>
+<p><strong>PhotoView</strong></p>
+</blockquote>
+<ul>
+<li><p><strong>Link:</strong> <a href="https://github.com/chrisbanes/PhotoView" target="_blank" rel="external">https://github.com/chrisbanes/PhotoView</a></p>
+</li>
+<li><p><strong>License:</strong> <code>Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</code></p>
+</li>
+</ul>
+<blockquote>
+<p><strong>OkHttp</strong></p>
+</blockquote>
+<ul>
+<li><p><strong>Link:</strong> <a href="https://github.com/square/okhttp" target="_blank" rel="external">https://github.com/square/okhttp</a></p>
+</li>
+<li><p><strong>License:</strong> <code>Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</code></p>
+</li>
+</ul>
+<blockquote>
+<p><strong>SmartTabLayout</strong></p>
+</blockquote>
+<ul>
+<li><p><strong>Link:</strong> <a href="https://github.com/ogaclejapan/SmartTabLayout" target="_blank" rel="external">https://github.com/ogaclejapan/SmartTabLayout</a></p>
+</li>
+<li><p><strong>License:</strong> <code>Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</code></p>
+</li>
+</ul>
+<blockquote>
+<p><strong>SwipeBackLayout</strong></p>
+</blockquote>
+<ul>
+<li><p><strong>Link:</strong> <a href="https://github.com/ikew0ng/SwipeBackLayout" target="_blank" rel="external">https://github.com/ikew0ng/SwipeBackLayout</a></p>
+</li>
+<li><p><strong>License:</strong> <code>Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</code></p>
+</li>
+</ul>
+<blockquote>
+<p><strong>ImageBlurring</strong></p>
+</blockquote>
+<ul>
+<li><p><strong>Link:</strong> <a href="https://github.com/qiujuer/ImageBlurring" target="_blank" rel="external">https://github.com/qiujuer/ImageBlurring</a></p>
+</li>
+<li><p><strong>License:</strong> <code>Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</code></p>
+</li>
+</ul>
+<blockquote>
+<p><strong>PinterestLikeAdapterView</strong></p>
+</blockquote>
+<ul>
+<li><p><strong>Link:</strong> <a href="https://github.com/dodola/PinterestLikeAdapterView" target="_blank" rel="external">https://github.com/dodola/PinterestLikeAdapterView</a></p>
+</li>
+<li><p><strong>License:</strong> <code>Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</code></p>
+</li>
+</ul>
+<blockquote>
+<p><strong>Material-Dialogs</strong></p>
+</blockquote>
+<ul>
+<li><strong>Link:</strong> <a href="https://github.com/afollestad/material-dialogs" target="_blank" rel="external">https://github.com/afollestad/material-dialogs</a></li>
+</ul>
+<blockquote>
+<p><strong>EventBus</strong></p>
+</blockquote>
+<ul>
+<li><strong>Link:</strong> <a href="https://github.com/greenrobot/EventBus" target="_blank" rel="external">https://github.com/greenrobot/EventBus</a></li>
+</ul>
+<blockquote>
+<p><strong>Gson</strong></p>
+</blockquote>
+<ul>
+<li><strong>Link:</strong> <a href="https://github.com/google/gson" target="_blank" rel="external">https://github.com/google/gson</a></li>
+</ul>
+<blockquote>
+<p><strong>Volley</strong></p>
+</blockquote>
+<ul>
+<li><strong>Link:</strong> <a href="https://android.googlesource.com/platform/frameworks/volley" target="_blank" rel="external">https://android.googlesource.com/platform/frameworks/volley</a></li>
+</ul>
+<blockquote>
+<p><strong>Umeng</strong></p>
+</blockquote>
+<ul>
+<li><strong>Link:</strong> <a href="http://www.umeng.com/" target="_blank" rel="external">http://www.umeng.com/</a></li>
+</ul>
+<blockquote>
+<p><strong>Youku</strong></p>
+</blockquote>
+<ul>
+<li><strong>Link:</strong> <a href="http://open.youku.com/" target="_blank" rel="external">http://open.youku.com/</a></li>
+</ul>
+<h2 id="打赏我"><a href="#打赏我" class="headerlink" title="打赏我"></a>打赏我</h2><p><img src="https://raw.githubusercontent.com/SkillCollege/server/master/SimplifyReader/images/pay_qrcode.png" alt="Image"></p>
+<h2 id="项目主页"><a href="#项目主页" class="headerlink" title="项目主页"></a>项目主页</h2><p><a href="http://www.qingcore.com/SimplifyReader/">http://www.qingcore.com/SimplifyReader/</a></p>
+<h2 id="License"><a href="#License" class="headerlink" title="License"></a>License</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">Copyright (c) 2015 [1076559197@qq.com | tchen0707@gmail.com]</div><div class="line"></div><div class="line">Licensed under the Apache License, Version 2.0 (the &quot;License”);</div><div class="line">you may not use this file except in compliance with the License.</div><div class="line">You may obtain a copy of the License at</div><div class="line"></div><div class="line">   http://www.apache.org/licenses/LICENSE-2.0</div><div class="line"></div><div class="line">Unless required by applicable law or agreed to in writing, software</div><div class="line">distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</div><div class="line">WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</div><div class="line">See the License for the specific language governing permissions and</div><div class="line">limitations under the License.</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/简阅/" rel="tag">#简阅</a>
+          
+            <a href="/tags/SimplifyReader/" rel="tag">#SimplifyReader</a>
+          
+            <a href="/tags/mvp/" rel="tag">#mvp</a>
+          
+            <a href="/tags/material-design/" rel="tag">#material-design</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2014/10/05/那些年为了开发二维码扫描-ZXing/" rel="next" title="那些年为了开发二维码扫描-ZXing">
+                <i class="fa fa-chevron-left"></i> 那些年为了开发二维码扫描-ZXing
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2015/08/18/拥抱开源怀抱，我也来分享-SimplifyReader/"
+     data-title="拥抱开源怀抱，我也来分享-SimplifyReader"
+     data-content=""
+     data-url="http://www.qingcore.com/2015/08/18/拥抱开源怀抱，我也来分享-SimplifyReader/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/08/18/拥抱开源怀抱，我也来分享-SimplifyReader/"
+           data-title="拥抱开源怀抱，我也来分享-SimplifyReader" data-url="http://www.qingcore.com/2015/08/18/拥抱开源怀抱，我也来分享-SimplifyReader/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="CHEN TAO" />
+          <p class="site-author-name" itemprop="name">CHEN TAO</p>
+          <p class="site-description motion-element" itemprop="description">不易匠心 | 方得始终</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/chentao0707" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github-square"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/obsessive1990" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:1076559197@qq.com" target="_blank" title="Email">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                  Email
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              经常逛的
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://github.com/=" title="Github" target="_blank">Github</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.google.com/" title="Google" target="_blank">Google</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://pixabay.com/" title="Pixabay" target="_blank">Pixabay</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.iconfont.cn/plus" title="iconfont" target="_blank">iconfont</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://gold.xitu.io/" title="掘金" target="_blank">掘金</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://android-arsenal.com/" title="android-arsenal" target="_blank">android-arsenal</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://stackoverflow.com/" title="stackoverflow" target="_blank">stackoverflow</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#效果图"><span class="nav-number">1.</span> <span class="nav-text">效果图</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Demo下载"><span class="nav-number">1.1.</span> <span class="nav-text">Demo下载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模块分析"><span class="nav-number">1.2.</span> <span class="nav-text">模块分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#新闻简读"><span class="nav-number">1.2.1.</span> <span class="nav-text">新闻简读</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片浏览"><span class="nav-number">1.2.2.</span> <span class="nav-text">图片浏览</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#视频爽看"><span class="nav-number">1.2.3.</span> <span class="nav-text">视频爽看</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#音乐轻听"><span class="nav-number">1.2.4.</span> <span class="nav-text">音乐轻听</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二维码扫描"><span class="nav-number">1.2.5.</span> <span class="nav-text">二维码扫描</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#致谢"><span class="nav-number">1.3.</span> <span class="nav-text">致谢</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开源项目说明"><span class="nav-number">1.4.</span> <span class="nav-text">开源项目说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#打赏我"><span class="nav-number">1.5.</span> <span class="nav-text">打赏我</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目主页"><span class="nav-number">1.6.</span> <span class="nav-text">项目主页</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#License"><span class="nav-number">1.7.</span> <span class="nav-text">License</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  Copyright &copy;  2014 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span> Content By </span>
+  <span class="author" itemprop="copyrightHolder">CHEN TAO</span>
+  <span> All Rights Reserved.</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"Obsessive"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = false;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = decodeURIComponent(data.url);
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title >= 0 || index_content >= 0 ){
+                                isMatch = true;
+								if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            } 
+							
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
