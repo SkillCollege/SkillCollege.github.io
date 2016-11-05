@@ -1,0 +1,949 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="fonts.useso.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="二维码,扫描,qrcode,zxing," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="CHEN TAO" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="什么是ZXingZXing是一个开源Java类库用于解析多种格式的1D/2D条形码。目标是能够对QR编码、Data Matrix、UPC的1D条形码进行解码。 其提供了多种平台下的客户端包括：J2ME、J2SE和Android。
+ZXing项目里面代码很多，实现的功能也很多，我们的应用只需要剥离其中的扫描模块即可，再多一点也就是生成二维码的功能；接下来我们就一起来精简ZXing项目，最终形成一个小">
+<meta property="og:type" content="article">
+<meta property="og:title" content="那些年为了开发二维码扫描-ZXing">
+<meta property="og:url" content="http://www.qingcore.com/2014/10/05/那些年为了开发二维码扫描-ZXing/index.html">
+<meta property="og:site_name" content="CHEN TAO">
+<meta property="og:description" content="什么是ZXingZXing是一个开源Java类库用于解析多种格式的1D/2D条形码。目标是能够对QR编码、Data Matrix、UPC的1D条形码进行解码。 其提供了多种平台下的客户端包括：J2ME、J2SE和Android。
+ZXing项目里面代码很多，实现的功能也很多，我们的应用只需要剥离其中的扫描模块即可，再多一点也就是生成二维码的功能；接下来我们就一起来精简ZXing项目，最终形成一个小">
+<meta property="og:image" content="http://img.blog.csdn.net/20140826211650312">
+<meta property="og:image" content="http://img.blog.csdn.net/20140911221535866?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2tpbGxjb2xsZWdl/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20141016140916836?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2tpbGxjb2xsZWdl/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20141016140635062?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2tpbGxjb2xsZWdl/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20141016141241165?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2tpbGxjb2xsZWdl/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20141016145748284?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2tpbGxjb2xsZWdl/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20141016144537703">
+<meta property="og:updated_time" content="2016-11-05T08:23:58.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="那些年为了开发二维码扫描-ZXing">
+<meta name="twitter:description" content="什么是ZXingZXing是一个开源Java类库用于解析多种格式的1D/2D条形码。目标是能够对QR编码、Data Matrix、UPC的1D条形码进行解码。 其提供了多种平台下的客户端包括：J2ME、J2SE和Android。
+ZXing项目里面代码很多，实现的功能也很多，我们的应用只需要剥离其中的扫描模块即可，再多一点也就是生成二维码的功能；接下来我们就一起来精简ZXing项目，最终形成一个小">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20140826211650312">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://www.qingcore.com/2014/10/05/那些年为了开发二维码扫描-ZXing/"/>
+
+
+  <title> 那些年为了开发二维码扫描-ZXing | CHEN TAO </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=1260741168&web_id=1260741168" language="JavaScript"></script>
+  </div>
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">CHEN TAO</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">An android developer</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                那些年为了开发二维码扫描-ZXing
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2014-10-05T16:21:10+08:00" content="2014-10-05">
+              2014-10-05
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/android/" itemprop="url" rel="index">
+                    <span itemprop="name">android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2014/10/05/那些年为了开发二维码扫描-ZXing/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2014/10/05/那些年为了开发二维码扫描-ZXing/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-file-o"></i>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="什么是ZXing"><a href="#什么是ZXing" class="headerlink" title="什么是ZXing"></a>什么是ZXing</h1><p><strong>ZXing是一个开源Java类库用于解析多种格式的1D/2D条形码。目标是能够对QR编码、Data Matrix、UPC的1D条形码进行解码。 其提供了多种平台下的客户端包括：J2ME、J2SE和Android。</strong></p>
+<p>ZXing项目里面代码很多，实现的功能也很多，我们的应用只需要剥离其中的扫描模块即可，再多一点也就是生成二维码的功能；接下来我们就一起来精简ZXing项目，最终形成一个小的Demo案例，当然江湖上已经有过N多种版本的ZXing精简项目，什么横屏改竖屏，绘制扫描界面，开启闪光灯等等，并且许多都是基于ZXing2.3.0来做精简的，后续有许多更新的版本，包括自动对焦，Camera管理，bug修复等等新功能；笔者使用的是ZXing3.1.0版本，这里需要说明的就是我的这版Demo绝对是江湖上面还没有出现的，也算是一点点小小的创新把，那就是去除ZXing项目中恼人的ViewFinderView的绘制，使用XML布局扫描界面，添加扫描动画，精确计算扫描区域，怎么样？是不是很心动，很想继续往下看呢？那就跟我一起做起来把！！！</p>
+<p>ZXing的下载地址： <a href="https://github.com/zxing/zxing" target="_blank" rel="external">传送门</a></p>
+<h1 id="克隆ZXing项目到本地"><a href="#克隆ZXing项目到本地" class="headerlink" title="克隆ZXing项目到本地"></a>克隆ZXing项目到本地</h1><p>打开Git Base，敲入命令： git clone <a href="https://github.com/zxing/zxing.git" target="_blank" rel="external">https://github.com/zxing/zxing.git</a></p>
+<p>如下图所示：<br><img src="http://img.blog.csdn.net/20140826211650312" alt=""></p>
+<p>当然你也可以直接点击Download ZIP<br><img src="http://img.blog.csdn.net/20140911221535866?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2tpbGxjb2xsZWdl/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
+<h1 id="整理ZXing代码"><a href="#整理ZXing代码" class="headerlink" title="整理ZXing代码"></a>整理ZXing代码</h1><p>打开ZXing项目的文件夹，可以看到如下文件：<br><img src="http://img.blog.csdn.net/20141016140916836?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2tpbGxjb2xsZWdl/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
+<p>其中我们主要关注2个文件夹里的内容：</p>
+<h2 id="core文件夹"><a href="#core文件夹" class="headerlink" title="core文件夹"></a>core文件夹</h2><p>ZXing项目的核心代码，可以新建一个Java工程，然后export成jar来调用。如下图所示：<br><img src="http://img.blog.csdn.net/20141016140635062?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2tpbGxjb2xsZWdl/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
+<p>免打包即可获得的zxing-3.1.0.jar: <a href="http://download.csdn.net/detail/tau_chan/8045281" target="_blank" rel="external">猛戳下载</a></p>
+<h2 id="android文件夹"><a href="#android文件夹" class="headerlink" title="android文件夹"></a>android文件夹</h2><p>Android示例工程代码，成功运行之后就是一个专业的扫码应用了。如下图所示：<br><img src="http://img.blog.csdn.net/20141016141241165?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2tpbGxjb2xsZWdl/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
+<p>免引入免整理的zxing原始工程 ZXingRawProject: <a href="http://download.csdn.net/detail/tau_chan/8045325" target="_blank" rel="external">猛戳下载</a></p>
+<p>这么为你着想，还不感谢我么？？！！<br>但是这样就让你满足了，那怎么可以说是极致二维码扫描呢，有木有感觉ZXing的扫描框的绘制很不爽啊？自定义的View绘制的很丑，多屏幕适配的时候还经常不兼容，原始项目还是横屏模式的，目前大家都习惯竖屏扫描呢。怎么办？别怕，我来告诉你，我要将ViewFinderView砍掉，使用xml界面布局，添加扫描动画，最终一样准确无误的扫描到二维码数据，只需要对准，是的，毫厘不差的对准就可以了。</p>
+<h1 id="精简ZXing代码，打造极致扫描"><a href="#精简ZXing代码，打造极致扫描" class="headerlink" title="精简ZXing代码，打造极致扫描"></a>精简ZXing代码，打造极致扫描</h1><p>由于ZXing官方的项目源码有许多是我们不需要的功能，所以当我们只需要二维码或者一维码扫描的时候，我们只需要提取其中的扫描部分代码就可以完成我们的需求了，接下来我们一起来精简ZXing代码，打造极致扫描！！</p>
+<h2 id="精简代码"><a href="#精简代码" class="headerlink" title="精简代码"></a>精简代码</h2><p>去掉ZXing中一些和扫描无关的代码，最终留下的代码结构如下图所示，最关键的是你看不到ViewFinderView了，是不是很爽？？<br><img src="http://img.blog.csdn.net/20141016145748284?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2tpbGxjb2xsZWdl/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
+<h2 id="扫描布局界面"><a href="#扫描布局界面" class="headerlink" title="扫描布局界面"></a>扫描布局界面</h2><p>xml代码如下：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;  </div><div class="line"><span class="tag">&lt;<span class="name">RelativeLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span>  </span></div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span>  </div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span>  </div><div class="line">    <span class="attr">android:background</span>=<span class="string">"@android:color/transparent"</span>  </div><div class="line">    <span class="attr">android:orientation</span>=<span class="string">"vertical"</span> &gt;  </div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">SurfaceView</span>  </span></div><div class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/capture_preview"</span>  </div><div class="line">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span>  </div><div class="line">        <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span> /&gt;  </div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">RelativeLayout</span>  </span></div><div class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/capture_container"</span>  </div><div class="line">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span>  </div><div class="line">        <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span> &gt;  </div><div class="line"></div><div class="line">        <span class="tag">&lt;<span class="name">ImageView</span>  </span></div><div class="line">            <span class="attr">android:id</span>=<span class="string">"@+id/capture_mask_top"</span>  </div><div class="line">            <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span>  </div><div class="line">            <span class="attr">android:layout_height</span>=<span class="string">"120dp"</span>  </div><div class="line">            <span class="attr">android:layout_alignParentTop</span>=<span class="string">"true"</span>  </div><div class="line">            <span class="attr">android:background</span>=<span class="string">"@drawable/shadow"</span> /&gt;  </div><div class="line"></div><div class="line">        <span class="tag">&lt;<span class="name">RelativeLayout</span>  </span></div><div class="line">            <span class="attr">android:id</span>=<span class="string">"@+id/capture_crop_view"</span>  </div><div class="line">            <span class="attr">android:layout_width</span>=<span class="string">"200dp"</span>  </div><div class="line">            <span class="attr">android:layout_height</span>=<span class="string">"200dp"</span>  </div><div class="line">            <span class="attr">android:layout_below</span>=<span class="string">"@id/capture_mask_top"</span>  </div><div class="line">            <span class="attr">android:layout_centerHorizontal</span>=<span class="string">"true"</span>  </div><div class="line">            <span class="attr">android:background</span>=<span class="string">"@drawable/qr_code_bg"</span> &gt;  </div><div class="line"></div><div class="line">            <span class="tag">&lt;<span class="name">ImageView</span>  </span></div><div class="line">                <span class="attr">android:id</span>=<span class="string">"@+id/capture_scan_line"</span>  </div><div class="line">                <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span>  </div><div class="line">                <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span>  </div><div class="line">                <span class="attr">android:layout_alignParentTop</span>=<span class="string">"true"</span>  </div><div class="line">                <span class="attr">android:layout_marginBottom</span>=<span class="string">"5dp"</span>  </div><div class="line">                <span class="attr">android:layout_marginTop</span>=<span class="string">"5dp"</span>  </div><div class="line">                <span class="attr">android:src</span>=<span class="string">"@drawable/scan_line"</span> /&gt;  </div><div class="line">        <span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span>  </div><div class="line"></div><div class="line">        <span class="tag">&lt;<span class="name">ImageView</span>  </span></div><div class="line">            <span class="attr">android:id</span>=<span class="string">"@+id/capture_mask_bottom"</span>  </div><div class="line">            <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span>  </div><div class="line">            <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span>  </div><div class="line">            <span class="attr">android:layout_alignParentBottom</span>=<span class="string">"true"</span>  </div><div class="line">            <span class="attr">android:layout_below</span>=<span class="string">"@id/capture_crop_view"</span>  </div><div class="line">            <span class="attr">android:background</span>=<span class="string">"@drawable/shadow"</span> /&gt;  </div><div class="line"></div><div class="line">        <span class="tag">&lt;<span class="name">ImageView</span>  </span></div><div class="line">            <span class="attr">android:id</span>=<span class="string">"@+id/capture_mask_left"</span>  </div><div class="line">            <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span>  </div><div class="line">            <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span>  </div><div class="line">            <span class="attr">android:layout_above</span>=<span class="string">"@id/capture_mask_bottom"</span>  </div><div class="line">            <span class="attr">android:layout_alignParentLeft</span>=<span class="string">"true"</span>  </div><div class="line">            <span class="attr">android:layout_below</span>=<span class="string">"@id/capture_mask_top"</span>  </div><div class="line">            <span class="attr">android:layout_toLeftOf</span>=<span class="string">"@id/capture_crop_view"</span>  </div><div class="line">            <span class="attr">android:background</span>=<span class="string">"@drawable/shadow"</span> /&gt;  </div><div class="line"></div><div class="line">        <span class="tag">&lt;<span class="name">ImageView</span>  </span></div><div class="line">            <span class="attr">android:id</span>=<span class="string">"@+id/capture_mask_right"</span>  </div><div class="line">            <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span>  </div><div class="line">            <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span>  </div><div class="line">            <span class="attr">android:layout_above</span>=<span class="string">"@id/capture_mask_bottom"</span>  </div><div class="line">            <span class="attr">android:layout_alignParentRight</span>=<span class="string">"true"</span>  </div><div class="line">            <span class="attr">android:layout_below</span>=<span class="string">"@id/capture_mask_top"</span>  </div><div class="line">            <span class="attr">android:layout_toRightOf</span>=<span class="string">"@id/capture_crop_view"</span>  </div><div class="line">            <span class="attr">android:background</span>=<span class="string">"@drawable/shadow"</span> /&gt;  </div><div class="line">    <span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span>  </div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="计算截取区域"><a href="#计算截取区域" class="headerlink" title="计算截取区域"></a>计算截取区域</h2><p>我认为你已经看了我的贴心注解内容了，否则。。。我不白啰嗦了么？<br><strong>贴心注解：</strong> 如果你没有看上一篇ZBar扫描中关于扫描区域计算的解释，那赶紧回去，咱不能急，看完再来接上，否则你会不理解的！<a href="http://skillcollege.github.io/2015/02/05/-%E6%89%93%E9%80%A0%E6%9E%81%E8%87%B4%E4%BA%8C%E7%BB%B4%E7%A0%81%E6%89%AB%E6%8F%8F%E7%B3%BB%E5%88%97-%E5%9F%BA%E4%BA%8EZBar%E7%9A%84Android%E5%B9%B3%E5%8F%B0%E8%A7%A3%E7%A0%81/" target="_blank" rel="external">传送门</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">initCrop</span><span class="params">()</span> </span>&#123;  </div><div class="line">    <span class="keyword">int</span> cameraWidth = cameraManager.getCameraResolution().y;  </div><div class="line">    <span class="keyword">int</span> cameraHeight = cameraManager.getCameraResolution().x;  </div><div class="line"></div><div class="line">    <span class="comment">/** 获取布局中扫描框的位置信息 */</span>  </div><div class="line">    <span class="keyword">int</span>[] location = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>];  </div><div class="line">    scanCropView.getLocationInWindow(location);  </div><div class="line"></div><div class="line">    <span class="keyword">int</span> cropLeft = location[<span class="number">0</span>];  </div><div class="line">    <span class="keyword">int</span> cropTop = location[<span class="number">1</span>] - getStatusBarHeight();  </div><div class="line"></div><div class="line">    <span class="keyword">int</span> cropWidth = scanCropView.getWidth();  </div><div class="line">    <span class="keyword">int</span> cropHeight = scanCropView.getHeight();  </div><div class="line"></div><div class="line">    <span class="comment">/** 获取布局容器的宽高 */</span>  </div><div class="line">    <span class="keyword">int</span> containerWidth = scanContainer.getWidth();  </div><div class="line">    <span class="keyword">int</span> containerHeight = scanContainer.getHeight();  </div><div class="line"></div><div class="line">    <span class="comment">/** 计算最终截取的矩形的左上角顶点x坐标 */</span>  </div><div class="line">    <span class="keyword">int</span> x = cropLeft * cameraWidth / containerWidth;  </div><div class="line">    <span class="comment">/** 计算最终截取的矩形的左上角顶点y坐标 */</span>  </div><div class="line">    <span class="keyword">int</span> y = cropTop * cameraHeight / containerHeight;  </div><div class="line"></div><div class="line">    <span class="comment">/** 计算最终截取的矩形的宽度 */</span>  </div><div class="line">    <span class="keyword">int</span> width = cropWidth * cameraWidth / containerWidth;  </div><div class="line">    <span class="comment">/** 计算最终截取的矩形的高度 */</span>  </div><div class="line">    <span class="keyword">int</span> height = cropHeight * cameraHeight / containerHeight;  </div><div class="line"></div><div class="line">    <span class="comment">/** 生成最终的截取的矩形 */</span>  </div><div class="line">    mCropRect = <span class="keyword">new</span> Rect(x, y, width + x, height + y);  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="验收效果"><a href="#验收效果" class="headerlink" title="验收效果"></a>验收效果</h2><p><img src="http://img.blog.csdn.net/20141016144537703" alt=""></p>
+<h2 id="项目源码"><a href="#项目源码" class="headerlink" title="项目源码"></a>项目源码</h2><p><a href="http://download.csdn.net/detail/tau_chan/8047193" target="_blank" rel="external">猛戳下载</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/二维码/" rel="tag">#二维码</a>
+          
+            <a href="/tags/扫描/" rel="tag">#扫描</a>
+          
+            <a href="/tags/qrcode/" rel="tag">#qrcode</a>
+          
+            <a href="/tags/zxing/" rel="tag">#zxing</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2014/08/26/那些年为了开发二维码扫描-ZBar/" rel="next" title="那些年为了开发二维码扫描-ZBar">
+                <i class="fa fa-chevron-left"></i> 那些年为了开发二维码扫描-ZBar
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2014/10/05/那些年为了开发二维码扫描-ZXing/"
+     data-title="那些年为了开发二维码扫描-ZXing"
+     data-content=""
+     data-url="http://www.qingcore.com/2014/10/05/那些年为了开发二维码扫描-ZXing/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2014/10/05/那些年为了开发二维码扫描-ZXing/"
+           data-title="那些年为了开发二维码扫描-ZXing" data-url="http://www.qingcore.com/2014/10/05/那些年为了开发二维码扫描-ZXing/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="CHEN TAO" />
+          <p class="site-author-name" itemprop="name">CHEN TAO</p>
+          <p class="site-description motion-element" itemprop="description">不易匠心 | 方得始终</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/chentao0707" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github-square"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/obsessive1990" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:1076559197@qq.com" target="_blank" title="Email">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                  Email
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              经常逛的
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://github.com/=" title="Github" target="_blank">Github</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.google.com/" title="Google" target="_blank">Google</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://pixabay.com/" title="Pixabay" target="_blank">Pixabay</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.iconfont.cn/plus" title="iconfont" target="_blank">iconfont</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://gold.xitu.io/" title="掘金" target="_blank">掘金</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://android-arsenal.com/" title="android-arsenal" target="_blank">android-arsenal</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://stackoverflow.com/" title="stackoverflow" target="_blank">stackoverflow</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是ZXing"><span class="nav-number">1.</span> <span class="nav-text">什么是ZXing</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#克隆ZXing项目到本地"><span class="nav-number">2.</span> <span class="nav-text">克隆ZXing项目到本地</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#整理ZXing代码"><span class="nav-number">3.</span> <span class="nav-text">整理ZXing代码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#core文件夹"><span class="nav-number">3.1.</span> <span class="nav-text">core文件夹</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#android文件夹"><span class="nav-number">3.2.</span> <span class="nav-text">android文件夹</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#精简ZXing代码，打造极致扫描"><span class="nav-number">4.</span> <span class="nav-text">精简ZXing代码，打造极致扫描</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#精简代码"><span class="nav-number">4.1.</span> <span class="nav-text">精简代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#扫描布局界面"><span class="nav-number">4.2.</span> <span class="nav-text">扫描布局界面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计算截取区域"><span class="nav-number">4.3.</span> <span class="nav-text">计算截取区域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#验收效果"><span class="nav-number">4.4.</span> <span class="nav-text">验收效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目源码"><span class="nav-number">4.5.</span> <span class="nav-text">项目源码</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  Copyright &copy;  2014 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span> Content By </span>
+  <span class="author" itemprop="copyrightHolder">CHEN TAO</span>
+  <span> All Rights Reserved.</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"Obsessive"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = false;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = decodeURIComponent(data.url);
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title >= 0 || index_content >= 0 ){
+                                isMatch = true;
+								if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            } 
+							
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
