@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.qingcore.com/"/>
-  <updated>2016-11-05T08:27:25.000Z</updated>
+  <updated>2016-11-05T08:30:24.000Z</updated>
   <id>http://www.qingcore.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://www.qingcore.com/2014/10/05/%E9%82%A3%E4%BA%9B%E5%B9%B4%E4%B8%BA%E4%BA%86%E5%BC%80%E5%8F%91%E4%BA%8C%E7%BB%B4%E7%A0%81%E6%89%AB%E6%8F%8F-ZXing/"/>
     <id>http://www.qingcore.com/2014/10/05/那些年为了开发二维码扫描-ZXing/</id>
     <published>2014-10-05T08:21:10.000Z</published>
-    <updated>2016-11-05T08:27:25.000Z</updated>
+    <updated>2016-11-05T08:30:24.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="什么是ZXing"><a href="#什么是ZXing" class="headerlink" title="什么是ZXing"></a>什么是ZXing</h1><p><strong>ZXing是一个开源Java类库用于解析多种格式的1D/2D条形码。目标是能够对QR编码、Data Matrix、UPC的1D条形码进行解码。 其提供了多种平台下的客户端包括：J2ME、J2SE和Android。</strong></p>
 <p>ZXing项目里面代码很多，实现的功能也很多，我们的应用只需要剥离其中的扫描模块即可，再多一点也就是生成二维码的功能；接下来我们就一起来精简ZXing项目，最终形成一个小的Demo案例，当然江湖上已经有过N多种版本的ZXing精简项目，什么横屏改竖屏，绘制扫描界面，开启闪光灯等等，并且许多都是基于ZXing2.3.0来做精简的，后续有许多更新的版本，包括自动对焦，Camera管理，bug修复等等新功能；笔者使用的是ZXing3.1.0版本，这里需要说明的就是我的这版Demo绝对是江湖上面还没有出现的，也算是一点点小小的创新把，那就是去除ZXing项目中恼人的ViewFinderView的绘制，使用XML布局扫描界面，添加扫描动画，精确计算扫描区域，怎么样？是不是很心动，很想继续往下看呢？那就跟我一起做起来把！！！</p>
@@ -57,9 +57,9 @@
     
       <category term="扫描" scheme="http://www.qingcore.com/tags/%E6%89%AB%E6%8F%8F/"/>
     
-      <category term="zxing" scheme="http://www.qingcore.com/tags/zxing/"/>
-    
       <category term="qrcode" scheme="http://www.qingcore.com/tags/qrcode/"/>
+    
+      <category term="zxing" scheme="http://www.qingcore.com/tags/zxing/"/>
     
   </entry>
   
@@ -68,7 +68,7 @@
     <link href="http://www.qingcore.com/2014/08/26/%E9%82%A3%E4%BA%9B%E5%B9%B4%E4%B8%BA%E4%BA%86%E5%BC%80%E5%8F%91%E4%BA%8C%E7%BB%B4%E7%A0%81%E6%89%AB%E6%8F%8F-ZBar/"/>
     <id>http://www.qingcore.com/2014/08/26/那些年为了开发二维码扫描-ZBar/</id>
     <published>2014-08-26T13:30:24.000Z</published>
-    <updated>2016-11-05T08:20:38.000Z</updated>
+    <updated>2016-11-05T08:30:19.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="什么是ZBar"><a href="#什么是ZBar" class="headerlink" title="什么是ZBar"></a>什么是ZBar</h2><p><strong>ZBar是一个开源库，用于扫描、读取二维码和条形码。支持的二维码包括：EAN/UPC，QR等</strong></p>
 <p>如果你是一个iPhone应用开发人员，做到二维码模块的时候，是不是会考虑ZBar开源项目来助你一臂之力呢？可是我这里说的是Android平台的开发，我为什么提到ZBar项目呢，难道我要用ZBar在Android平台扫描二维码吗？对的，没有错！这将会是一个极其不错的选择。为什么这么说呢，不是很多Android开发都是用ZXing来解析二维码的么？好吧，ZXing是我下一篇文章要写的，这里先抛砖引玉说一点点。我将ZXing和ZBar做一个比较，说说它们的优缺点，便于大家的取舍。</p>
@@ -125,16 +125,16 @@
     
     </summary>
     
-      <category term="andorid" scheme="http://www.qingcore.com/categories/andorid/"/>
+      <category term="android" scheme="http://www.qingcore.com/categories/android/"/>
     
     
       <category term="二维码" scheme="http://www.qingcore.com/tags/%E4%BA%8C%E7%BB%B4%E7%A0%81/"/>
     
       <category term="扫描" scheme="http://www.qingcore.com/tags/%E6%89%AB%E6%8F%8F/"/>
     
-      <category term="qrcode" scheme="http://www.qingcore.com/tags/qrcode/"/>
-    
       <category term="zbar" scheme="http://www.qingcore.com/tags/zbar/"/>
+    
+      <category term="qrcode" scheme="http://www.qingcore.com/tags/qrcode/"/>
     
   </entry>
   
