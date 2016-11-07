@@ -4,6 +4,100 @@
   
     
     <entry>
+      <title><![CDATA[假如时光倒流，我会这样学Android-开发工具]]></title>
+      <url>http://www.qingcore.com/2016/11/07/%E5%81%87%E5%A6%82%E6%97%B6%E5%85%89%E5%80%92%E6%B5%81%EF%BC%8C%E6%88%91%E4%BC%9A%E8%BF%99%E6%A0%B7%E5%AD%A6Android-%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/</url>
+      <content type="html"><![CDATA[<img src="http://og3hy5w94.bkt.clouddn.com/static/images/tools/1.jpg">
+<p>工欲善其事必先利其器，不管做什么事情，好的工具必定能带来更高的效率，更好的成果。软件开发也是这样，好的开发工具也能带来事倍功半的效果，在这里我就分享一下我自己的一些开发工具，以供参考。</p>
+<h1 id="硬件"><a href="#硬件" class="headerlink" title="硬件"></a>硬件</h1><p>我目前使用的是13英寸的RMBP（Retina Mac Book Pro），2015年初买的。当时花了8k多，还是同事从台湾帮我带回来的，各项配置足够我使用了，唯一的缺憾就是SSD太小了，只有128G，如果现在买的话，我肯定会选择15英寸的。当然现在已经出了<strong>Touch Bar</strong>了。</p>
+<p>想想当时花了这么多银子买了一个mac回来，在公司里，别人都会说：你一个开发Android的买mac干嘛？还这么贵？我只能以玩笑的口吻答道：装逼。其实内心想说“燕雀安知鸿鹄之志”。</p>
+<p>用了这么久的mac，给我带来的好处自不用说。我喜欢各种各样的快捷键操作，喜欢命令行，可能与我一开始接触过Linux相关吧。最大的一点莫过于mac的触控板了，各种手势做的真心好用，完全可以脱离鼠标。我也再没有安装过什么杀毒软件，安全卫士了。</p>
+<h1 id="软件"><a href="#软件" class="headerlink" title="软件"></a>软件</h1><p>对于科学上网这件事，上一篇博文已经描述过了，以下需要翻墙的就自行解决了</p>
+<h2 id="浏览器插件"><a href="#浏览器插件" class="headerlink" title="浏览器插件"></a>浏览器插件</h2><p>这里面提到的浏览器是基于Chrome来说的，因为我一直用的是Chrome，哈哈~</p>
+<ul>
+<li><p><a href="https://chrome.google.com/webstore/detail/adblock-plus/cfhdojbkjhnklbpkdaibdccddilifddb" target="_blank" rel="external">Adblock Plus</a><br>广告屏蔽插件，有了它，看网页再也不用担心飘来飘去的广告弹窗了</p>
+</li>
+<li><p><a href="https://chrome.google.com/webstore/detail/crxmouse-chrome-gestures/jlgkpaicikihijadgifklkbpdajbkhjo" target="_blank" rel="external">crxMouse Chrome Gestures</a><br>鼠标手势插件</p>
+</li>
+<li><p><a href="https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc" target="_blank" rel="external">JSONView</a><br>json数据格式化插件，当你调试服务端接口时，浏览器访问之后的json数据自动格式化，很完美</p>
+</li>
+<li><p><a href="https://github.com/buunguyen/octotree" target="_blank" rel="external">Octotree</a><br>Code tree for GitHub and GitLab，以树状图的形式来展示github的代码，对于我这样一个github重度用户来说，还是很有用的，效果是这样子的<br><img src="https://github.com/buunguyen/octotree/raw/master/docs/chrome-github.png" alt="image"></p>
+</li>
+</ul>
+<h2 id="开发工具"><a href="#开发工具" class="headerlink" title="开发工具"></a>开发工具</h2><ul>
+<li><p><a href="http://www.androiddevtools.cn/" target="_blank" rel="external">AndroidDevTools</a><br>这个可谓是Android开发工具全家桶了，里面基本上能有的都有了。</p>
+</li>
+<li><p><a href="https://developer.android.com/develop/index.html" target="_blank" rel="external">Android Studio</a><br>新时代开发Android如果还没有用Android Studio，那真的算是out了，想想当时用eclipse开发Android的时候，搭建一个开发环境也够喝一壶的了。下载AS可以到官网，也可以通过<a href="http://tools.android.com/" target="_blank" rel="external">http://tools.android.com/</a>这个网站来下载，这里面提供了Canary，Dev，Beta，Stable四个channel。看你自己怎么选择了。</p>
+</li>
+<li><p><a href="https://atom.io/" target="_blank" rel="external">Atom</a><br>Github开源的文本编辑器</p>
+<img src="http://og3hy5w94.bkt.clouddn.com/static/images/tools/2.png">
+</li>
+<li><p><a href="https://www.getpostman.com/" target="_blank" rel="external">Postman</a><br>调试后台接口利器，Postman helps you develop APIs faster.<br><img src="https://www.getpostman.com/img/v2/homepage/light-theme-main-view-min.png?0eb696e07f466ced153edf3166af5f11" alt="image"></p>
+</li>
+<li><p><a href="https://www.genymotion.com/" target="_blank" rel="external">GenyMotion</a><br>Android虚拟机，More than an emulator,a powerful virtualization platform to address all your professional needs<br><img src="https://www.genymotion.com/wp-content/uploads/2016/09/screenshot_gmdesktop.jpg" alt="image"></p>
+</li>
+<li><p><a href="http://www.iterm2.com/" target="_blank" rel="external">iTerm2</a><br>命令行终端，结合oh-my-zsh使用起来还是挺爽的<br><img src="http://www.iterm2.com/img/logo.jpg" alt="image"></p>
+</li>
+</ul>
+<h2 id="UI相关"><a href="#UI相关" class="headerlink" title="UI相关"></a>UI相关</h2><ul>
+<li><p><a href="http://www.adobe.com/cn/products/cs6/photoshop.html" target="_blank" rel="external">Photoshop</a><br>不会点PS技术，怎么行走江湖呢？😏</p>
+<img src="http://og3hy5w94.bkt.clouddn.com/static/images/tools/3.png">
+</li>
+<li><p><a href="https://imageoptim.com/mac" target="_blank" rel="external">Image Optim</a><br>图片压缩，在做apk瘦身的时候，压缩png图片还是挺棒的<br><img src="https://imageoptim.com/ImageOptim-app@2x.png" alt="image"></p>
+</li>
+<li><p><a href="https://itunes.apple.com/us/app/sip/id507257563?mt=12" target="_blank" rel="external">Sip</a><br>屏幕取色器，在使用Hex，RGB颜色值的时候，用这款软件取色还是挺小巧易用的<br><img src="http://a4.mzstatic.com/us/r30/Purple62/v4/ab/81/c3/ab81c3dd-e6bf-31f7-f7f6-62f8d2b0bae0/screen800x500.jpeg" alt="image"></p>
+</li>
+</ul>
+<h2 id="Markdown相关"><a href="#Markdown相关" class="headerlink" title="Markdown相关"></a>Markdown相关</h2><ul>
+<li><p><a href="http://25.io/mou/" target="_blank" rel="external">Mou</a><br><img src="http://25.io/mou/img/1@2x.png" alt="image"></p>
+</li>
+<li><p><a href="http://www.typora.io/" target="_blank" rel="external">Typora</a><br><img src="http://www.typora.io/img/screen/mathjax.png" alt="image"></p>
+</li>
+<li><p><a href="http://zh.mweb.im/" target="_blank" rel="external">MWeb</a><br><img src="http://zh.mweb.im/asset/img/cn/1-1.jpg" alt="image"></p>
+</li>
+</ul>
+<p>以上3款markdown编辑各有各的特色，各有各的优势。我只能以最简单的方式说一下差别</p>
+<blockquote>
+<p>Mou支持markdown的所有基本格式，可横竖屏<br>Typora除了支持基本格式以外，还支持数学公式，任务列表等<br>MWeb是收费的，是收费的，是收费的。</p>
+</blockquote>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
+<li><p><a href="http://www.xmindchina.net/" target="_blank" rel="external">XMind</a><br>一款思维导图软件，记录自己的奇思妙想。</p>
+</li>
+<li><p><a href="http://viperftp.com/download.html" target="_blank" rel="external">Viper FTP Lite</a><br>OS X下的FTP客户端，平时需要使用ftp的时候，这款软件还不错。</p>
+</li>
+<li><p><a href="https://itunes.apple.com/us/app/the-unarchiver/id425424353?mt=12" target="_blank" rel="external">The Unarchiver</a><br>OS X下的文件压缩解压缩工具，支持Zip, RAR (including v5), 7-zip, Tar, Gzip, Bzip2等。</p>
+</li>
+<li><p><a href="https://www.android.com/filetransfer/" target="_blank" rel="external">Android File Transfer</a><br>OS X下的Android文件传输工具，很好用。不过有时候你不想它烦你，只想需要的时候就找它，那么这篇文章对你可能很有帮助。<a href="http://blog.iderzheng.com/disable-auto-start-of-android-file-transfer/" target="_blank" rel="external">火速跳转</a></p>
+</li>
+</ul>
+<h1 id="环境变量配置"><a href="#环境变量配置" class="headerlink" title="环境变量配置"></a>环境变量配置</h1><p>一般我会将一些常用的命令，路径，命令别名统统写到bash profile里面，打开终端使用起来就会更快，更高效<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">ANDROID_PLATFORM_TOOLS_DIR=/Users/chentao/Documents/Android/SDK/platform-tools</div><div class="line">ANDROID_TOOLS_DIR=/Users/chentao/Documents/Android/SDK/tools</div><div class="line">APKTOOL_DIR=/Users/chentao/Documents/Android/ApkDecompile/ApkTool-2.0.1</div><div class="line">D2J_DIR=/Users/chentao/Documents/Android/ApkDecompile/dex2jar-2.0</div><div class="line">GRADLE_DIR=/Users/chentao/Documents/Android/Gradle/gradle-3.1/bin</div><div class="line">DROID_SCRIPTS_DIR=/Users/chentao/Documents/Android/DroidScripts</div><div class="line"></div><div class="line">PATH=<span class="variable">$ANDROID_PLATFORM_TOOLS_DIR</span>:<span class="variable">$ANDROID_TOOLS_DIR</span>:<span class="variable">$APKTOOL_DIR</span>:<span class="variable">$D2J_DIR</span>:<span class="variable">$DROID_SCRIPTS_DIR</span>:<span class="variable">$GRADLE_DIR</span>:<span class="variable">$PATH</span></div><div class="line"></div><div class="line"><span class="built_in">export</span> PATH</div><div class="line"></div><div class="line"><span class="built_in">alias</span> cl=<span class="string">"clear"</span></div><div class="line"><span class="built_in">alias</span> ll=<span class="string">"ls -l"</span></div><div class="line"><span class="built_in">alias</span> la=<span class="string">"ls -a"</span></div><div class="line"></div><div class="line"><span class="built_in">alias</span> ai=<span class="string">"adbInstall.sh"</span></div><div class="line"><span class="built_in">alias</span> as=<span class="string">"appSettingPage.sh"</span></div><div class="line"><span class="built_in">alias</span> ast=<span class="string">"appLauncherStartTime.sh"</span></div><div class="line"><span class="built_in">alias</span> dca=<span class="string">"dumpCurrentActivity.sh"</span></div><div class="line"></div><div class="line"><span class="built_in">alias</span> cdd=<span class="string">"cd /Users/Obsessive/Documents/"</span></div><div class="line"><span class="built_in">alias</span> cdl=<span class="string">"cd /Users/Obsessive/Downloads"</span></div><div class="line"><span class="built_in">alias</span> cdt=<span class="string">"cd /Users/Obsessive/Desktop"</span></div></pre></td></tr></table></figure></p>
+<p>以上仅供参考</p>
+<h1 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h1><p>上面的环境变量里面有一些命令别名是运行脚本的，这些脚本可以很方便的调试Android程序</p>
+<ul>
+<li>adbInstall.sh</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/sh</span></div><div class="line">adb install <span class="variable">$1</span></div></pre></td></tr></table></figure>
+<p>运行脚本，跟上apk安装包的路径即可安装</p>
+<ul>
+<li>appSettingPage.sh</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/sh</span></div><div class="line">adb shell am start  <span class="_">-a</span> <span class="string">"android.settings.APPLICATION_DETAILS_SETTINGS"</span> <span class="_">-d</span> <span class="string">"package:<span class="variable">$1</span>"</span></div></pre></td></tr></table></figure>
+<p>有些时候，我们需要打开app的系统设置页，清除缓存或者清除数据啥的，运行以上脚本，输入package名称就可以打开了</p>
+<ul>
+<li>appLauncherStartTime.sh</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/sh</span></div><div class="line">adb shell am start -W <span class="variable">$1</span>/<span class="variable">$1</span>.<span class="variable">$2</span></div></pre></td></tr></table></figure>
+<p>这个脚本是在调试应用冷启动耗时时间的，运行脚本，输入包名和Launcher Activity即可，假设应用包名是com.demo,应用启动activity位于com.demo.ui.activity下面，activity名称是SplashActivity,那么脚本使用如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">appLauncherStartTime.sh com.demo .ui.activity.SplashActivity</div></pre></td></tr></table></figure>
+<p><strong>注意com.demo和后面.ui.activity.SplashActivity之间是有一个空格的</strong></p>
+<ul>
+<li>dumpCurrentActivity.sh</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/bash</span></div><div class="line"> adb shell dumpsys window windows | grep -E <span class="string">'mCurrentFocus|mFocusedApp'</span> --color=always</div></pre></td></tr></table></figure>
+<p>这个脚本是查看当前手机屏幕上的app的activity信息</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[科学上网的正确姿势-不会都不好意思说自己是搞技术的]]></title>
       <url>http://www.qingcore.com/2016/11/05/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%A7%BF%E5%8A%BF-%E4%B8%8D%E4%BC%9A%E9%83%BD%E4%B8%8D%E5%A5%BD%E6%84%8F%E6%80%9D%E8%AF%B4%E8%87%AA%E5%B7%B1%E6%98%AF%E6%90%9E%E6%8A%80%E6%9C%AF%E7%9A%84/</url>
       <content type="html"><![CDATA[<h1 id="缘起"><a href="#缘起" class="headerlink" title="缘起"></a>缘起</h1><p><strong>科学上网</strong>一词在技术圈应该不是什么新鲜玩意，迫于GFW的强大威力，我们身处在一个强大的局域网内。对于程序猿，最基本的Google搜索技能应该掌握，因为用过百度的都知道。那结果简直了~</p>
