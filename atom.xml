@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.qingcore.com/"/>
-  <updated>2016-11-05T14:04:34.000Z</updated>
+  <updated>2016-11-07T07:43:33.000Z</updated>
   <id>http://www.qingcore.com/</id>
   
   <author>
@@ -20,9 +20,69 @@
     <link href="http://www.qingcore.com/2016/11/05/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%A7%BF%E5%8A%BF-%E4%B8%8D%E4%BC%9A%E9%83%BD%E4%B8%8D%E5%A5%BD%E6%84%8F%E6%80%9D%E8%AF%B4%E8%87%AA%E5%B7%B1%E6%98%AF%E6%90%9E%E6%8A%80%E6%9C%AF%E7%9A%84/"/>
     <id>http://www.qingcore.com/2016/11/05/科学上网的正确姿势-不会都不好意思说自己是搞技术的/</id>
     <published>2016-11-05T14:03:03.000Z</published>
-    <updated>2016-11-05T14:04:34.000Z</updated>
+    <updated>2016-11-07T07:43:33.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="缘起"><a href="#缘起" class="headerlink" title="缘起"></a>缘起</h1><p><strong>科学上网</strong>一词在技术圈应该不是什么新鲜玩意，迫于GFW的强大威力，我们身处在一个强大的局域网内。对于程序猿，最基本的Google搜索技能应该掌握，因为用过百度的都知道。那结果简直了~</p>
+<p>一开始我一直使用的免费的VPN，修改hosts等等，可是天下没有免费的午餐，免费的东西用了一段时间不是不稳定就是不能用，来来回回折腾十分难受。这期间我用过的有<code>自由门</code>，<code>GoAgent</code>，<code>红杏</code>。后来在一个QQ群里不知道是哪个雷锋共享了他的<code>Shadowsocks</code>账号，我很稳定的用了一段时间，那感觉真好。很不幸，后来<code>Shadowsocks</code>迫于某种原因被删除了所有的代码，我的那个账号也不能使用了。墙外的生活过习惯了，一旦让你突然停止下来，你会很不自在。这也使得我坚定了付费使用的决心~</p>
+<h1 id="VPS-搬瓦工"><a href="#VPS-搬瓦工" class="headerlink" title="VPS(搬瓦工)"></a>VPS(搬瓦工)</h1><p>一开始我也不知道VPS是什么东西，虽然到现在我也半清不楚的。但是我就这样买了2年多的VPS了，只记得那个时候我问一个朋友他怎么科学上网的，他就不声不响的发给我一个链接<a href="https://bandwagonhost.com/" target="_blank" rel="external">https://bandwagonhost.com/</a>,好家伙，我一打开，整个就一个英文网站，界面如下：</p>
+<img src="http://og3hy5w94.bkt.clouddn.com/static/images/gfw/bandwagon.png">
+<p>我的天呐，我都看不懂，怎么办？尽管如此，我还是似懂非懂的买了一个季度的，说实话当时我都不知道那个付费买的是一个季度的，只有一个到期时间知道是3个月，其他的就是付款了，还是以美元计算的，很庆幸它支持支付宝付款，就这样买完了我还担心是不是盗我支付宝账号的，最后还是担惊受怕的用了起来。至于怎么知道它就是<strong>搬瓦工</strong>的，还是最近买域名的时候，在知乎上面看到一个人回答的时候，我看到了熟悉的截图网页，对，没错就是上面的这张图片，这个时候我才知道原来我用了这么久的VPS就叫<strong>搬瓦工</strong>，请原谅我的见识短浅。。。😭😭😭到现在我买了这个vps，一直使用的是它的一键<code>Shadowsocks</code>功能，因为我就想科学上网。</p>
+<h2 id="搬瓦工使用流程"><a href="#搬瓦工使用流程" class="headerlink" title="搬瓦工使用流程"></a>搬瓦工使用流程</h2><h3 id="购买"><a href="#购买" class="headerlink" title="购买"></a>购买</h3><ul>
+<li><p>官网<br>点击链接<a href="https://bandwagonhost.com/" target="_blank" rel="external">https://bandwagonhost.com/</a>进入官网，注册一个账号。</p>
+</li>
+<li><p>选择vps<br>我选择的是10G VPS，对我来说足够了，如下图，点击Order Now选购</p>
+</li>
+</ul>
+<img src="http://og3hy5w94.bkt.clouddn.com/static/images/gfw/1.png">
+<ul>
+<li>付费方式<br>一共提供了4中付费方式，依次是Monthly(一个月)，Quarterly(一季度)，Semi-Aunually(半年)，Annually（一年）。我选择的是<code>Annually</code></li>
+</ul>
+<img src="http://og3hy5w94.bkt.clouddn.com/static/images/gfw/2.png">
+<ul>
+<li>服务器位置<br>一共有4个机房位置可供选择，分别是： Los Angeles（洛杉矶），Arizona（亚利桑那州），Florida（佛罗里达州），Netherlands（荷兰）。我选择的是Florida，当然购买后你还可以一键切换到其他地方，很方便！</li>
+</ul>
+<p>都选择完后就可以<strong>Add to Cart</strong>了<br><img src="http://og3hy5w94.bkt.clouddn.com/static/images/gfw/3.png"></p>
+<ul>
+<li>确认订单<br>订单没什么问题就可以<strong>Check Out</strong>了</li>
+</ul>
+<img src="http://og3hy5w94.bkt.clouddn.com/static/images/gfw/4.png">
+<ul>
+<li>支付方式<br>填写个人信息，然后选择支付方式，一共有3种方式可以选择：<strong>Paypal</strong>，<strong>信用卡</strong>，<strong>Alipay（支付宝）</strong></li>
+</ul>
+<img src="http://og3hy5w94.bkt.clouddn.com/static/images/gfw/5.png">
+<ul>
+<li>付款<br>完成付款后就可以使用了</li>
+</ul>
+<img src="http://og3hy5w94.bkt.clouddn.com/static/images/gfw/6.png">
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><ul>
+<li>服务列表<br>完成以上步骤后进入官网点击VPS Hosting，选择下拉导航栏的Services里面的My Services</li>
+</ul>
+<img src="http://og3hy5w94.bkt.clouddn.com/static/images/gfw/7.png">
+<p>在这里可以看到自己的vps主机信息</p>
+<img src="http://og3hy5w94.bkt.clouddn.com/static/images/gfw/8.png">
+<p>每个vps主机后面都有两个操作按钮Manage和KiwiVM Control Panel</p>
+<ul>
+<li>KiwiVM控制台<br>通过点击KiwiVM Control Panel进入KiwiVM控制台首页</li>
+</ul>
+<img src="http://og3hy5w94.bkt.clouddn.com/static/images/gfw/9.png">
+<p>左侧是一些功能导航菜单</p>
+<img src="http://og3hy5w94.bkt.clouddn.com/static/images/gfw/10.png">
+<p>之前说的切换服务器位置就是通过Migrate to another DC来操作的。</p>
+<ul>
+<li>Shadowsocks安装<br>主角登场了，就是安装Shadowsocks，点击控制台的Shadowsocks Server菜单，一键Install，安装完成后就可以使用了</li>
+</ul>
+<img src="http://og3hy5w94.bkt.clouddn.com/static/images/gfw/11.png">
+<p>在这里可以修改加密方式，端口和密码。在自己的PC上面安装Shadowsocks客户端，输入账号信息就可以轻松科学上网了。</p>
+<p><strong>PS：</strong> 由于还不能科学上网的童鞋是访问不了搬瓦工官网的，所以我以上说的不都白瞎了吗？所以我这里就提到第二种科学上网姿势–<strong>蓝灯</strong></p>
+<h1 id="蓝灯（lantern）"><a href="#蓝灯（lantern）" class="headerlink" title="蓝灯（lantern）"></a>蓝灯（lantern）</h1><h2 id="使用流程"><a href="#使用流程" class="headerlink" title="使用流程"></a>使用流程</h2><p>这个最简单，通过蓝灯github免翻墙下载安装文件就可以了，附上链接地址<br><a href="https://github.com/getlantern/forum#蓝灯lantern最新版本下载" target="_blank" rel="external">lantern</a></p>
+<h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><p>可能你们又会说了，既然蓝灯可以免费翻墙，为什么你还要付费购买vps呢，我只能说，</p>
+<p><strong>生命不息，折腾不止</strong></p>
+<p>其实是因为我买完才发现蓝灯的。蓝瘦，香菇~😭😭😭<br>不过我如果用蓝灯也是会购买专业版的，毕竟天下没有免费的午餐~<br>当你购买时希望能加上我的邀请码，这样对你我都有好处，何乐而不为呢？<br>输入我的邀请码 <strong>GCSTRX</strong> ，额外获得三个月的蓝灯专业版！</p>
+]]></content>
     
     <summary type="html">
+    
+      &lt;h1 id=&quot;缘起&quot;&gt;&lt;a href=&quot;#缘起&quot; class=&quot;headerlink&quot; title=&quot;缘起&quot;&gt;&lt;/a&gt;缘起&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;科学上网&lt;/strong&gt;一词在技术圈应该不是什么新鲜玩意，迫于GFW的强大威力，我们身处在一个强大的局域网内。对于程序猿，
     
     </summary>
     
