@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.qingcore.com/"/>
-  <updated>2016-11-07T14:52:35.000Z</updated>
+  <updated>2016-11-08T08:25:01.000Z</updated>
   <id>http://www.qingcore.com/</id>
   
   <author>
@@ -20,13 +20,13 @@
     <link href="http://www.qingcore.com/2016/11/07/%E5%81%87%E5%A6%82%E6%97%B6%E5%85%89%E5%80%92%E6%B5%81%EF%BC%8C%E6%88%91%E4%BC%9A%E8%BF%99%E6%A0%B7%E5%AD%A6Android-%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
     <id>http://www.qingcore.com/2016/11/07/假如时光倒流，我会这样学Android-开发工具/</id>
     <published>2016-11-07T07:59:58.000Z</published>
-    <updated>2016-11-07T14:52:35.000Z</updated>
+    <updated>2016-11-08T08:25:01.000Z</updated>
     
     <content type="html"><![CDATA[<img src="http://og3hy5w94.bkt.clouddn.com/static/images/tools/1.jpg">
 <p>工欲善其事必先利其器，不管做什么事情，好的工具必定能带来更高的效率，更好的成果。软件开发也是这样，好的开发工具也能带来事倍功半的效果，在这里我就分享一下我自己的一些开发工具，以供参考。</p>
 <h1 id="硬件"><a href="#硬件" class="headerlink" title="硬件"></a>硬件</h1><p>我目前使用的是13英寸的RMBP（Retina Mac Book Pro），2015年初买的。当时花了8k多，还是同事从台湾帮我带回来的，各项配置足够我使用了，唯一的缺憾就是SSD太小了，只有128G，如果现在买的话，我肯定会选择15英寸的。当然现在已经出了<strong>Touch Bar</strong>了。</p>
 <p>想想当时花了这么多银子买了一个mac回来，在公司里，别人都会说：你一个开发Android的买mac干嘛？还这么贵？我只能以玩笑的口吻答道：装逼。其实内心想说“燕雀安知鸿鹄之志”。</p>
-<p>用了这么久的mac，给我带来的好处自不用说。我喜欢各种各样的快捷键操作，喜欢命令行，可能与我一开始接触过Linux相关吧。最大的一点莫过于mac的触控板了，各种手势做的真心好用，完全可以脱离鼠标。我也再没有安装过什么杀毒软件，安全卫士了。</p>
+<p>用了这么久的mac，给我带来的好处自不用说。我喜欢各种各样的快捷键操作，喜欢命令行，可能与我一开始接触过Linux有关吧。最大的一点莫过于mac的触控板了，各种手势做的真心好用，完全可以脱离鼠标。我也再没有安装过什么杀毒软件，安全卫士了。</p>
 <h1 id="软件"><a href="#软件" class="headerlink" title="软件"></a>软件</h1><p>对于科学上网这件事，上一篇博文已经描述过了，以下需要翻墙的就自行解决了</p>
 <h2 id="浏览器插件"><a href="#浏览器插件" class="headerlink" title="浏览器插件"></a>浏览器插件</h2><p>这里面提到的浏览器是基于Chrome来说的，因为我一直用的是Chrome，哈哈~</p>
 <ul>
@@ -56,7 +56,7 @@
 </ul>
 <h2 id="UI相关"><a href="#UI相关" class="headerlink" title="UI相关"></a>UI相关</h2><ul>
 <li><p><a href="http://www.adobe.com/cn/products/cs6/photoshop.html" target="_blank" rel="external">Photoshop</a><br>不会点PS技术，怎么行走江湖呢？😏</p>
-<img src="http://og3hy5w94.bkt.clouddn.com/static/images/tools/3.png">
+<img src="http://og3hy5w94.bkt.clouddn.com/static/images/tools/3.jpg">
 </li>
 <li><p><a href="https://imageoptim.com/mac" target="_blank" rel="external">Image Optim</a><br>图片压缩，在做apk瘦身的时候，压缩png图片还是挺棒的<br><img src="https://imageoptim.com/ImageOptim-app@2x.png" alt="image"></p>
 </li>
@@ -110,6 +110,7 @@
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/bash</span></div><div class="line"> adb shell dumpsys window windows | grep -E <span class="string">'mCurrentFocus|mFocusedApp'</span> --color=always</div></pre></td></tr></table></figure>
 <p>这个脚本是查看当前手机屏幕上的app的activity信息</p>
+<h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><p>我目前能安利的只有这么多了，如果你也还有什么神兵利器，不妨也分享出来呢~</p>
 ]]></content>
     
     <summary type="html">
@@ -133,12 +134,12 @@
     <link href="http://www.qingcore.com/2016/11/05/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%A7%BF%E5%8A%BF-%E4%B8%8D%E4%BC%9A%E9%83%BD%E4%B8%8D%E5%A5%BD%E6%84%8F%E6%80%9D%E8%AF%B4%E8%87%AA%E5%B7%B1%E6%98%AF%E6%90%9E%E6%8A%80%E6%9C%AF%E7%9A%84/"/>
     <id>http://www.qingcore.com/2016/11/05/科学上网的正确姿势-不会都不好意思说自己是搞技术的/</id>
     <published>2016-11-05T14:03:03.000Z</published>
-    <updated>2016-11-07T07:43:33.000Z</updated>
+    <updated>2016-11-08T08:24:26.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="缘起"><a href="#缘起" class="headerlink" title="缘起"></a>缘起</h1><p><strong>科学上网</strong>一词在技术圈应该不是什么新鲜玩意，迫于GFW的强大威力，我们身处在一个强大的局域网内。对于程序猿，最基本的Google搜索技能应该掌握，因为用过百度的都知道。那结果简直了~</p>
 <p>一开始我一直使用的免费的VPN，修改hosts等等，可是天下没有免费的午餐，免费的东西用了一段时间不是不稳定就是不能用，来来回回折腾十分难受。这期间我用过的有<code>自由门</code>，<code>GoAgent</code>，<code>红杏</code>。后来在一个QQ群里不知道是哪个雷锋共享了他的<code>Shadowsocks</code>账号，我很稳定的用了一段时间，那感觉真好。很不幸，后来<code>Shadowsocks</code>迫于某种原因被删除了所有的代码，我的那个账号也不能使用了。墙外的生活过习惯了，一旦让你突然停止下来，你会很不自在。这也使得我坚定了付费使用的决心~</p>
 <h1 id="VPS-搬瓦工"><a href="#VPS-搬瓦工" class="headerlink" title="VPS(搬瓦工)"></a>VPS(搬瓦工)</h1><p>一开始我也不知道VPS是什么东西，虽然到现在我也半清不楚的。但是我就这样买了2年多的VPS了，只记得那个时候我问一个朋友他怎么科学上网的，他就不声不响的发给我一个链接<a href="https://bandwagonhost.com/" target="_blank" rel="external">https://bandwagonhost.com/</a>,好家伙，我一打开，整个就一个英文网站，界面如下：</p>
-<img src="http://og3hy5w94.bkt.clouddn.com/static/images/gfw/bandwagon.png">
+<img src="http://og3hy5w94.bkt.clouddn.com/static/images/gfw/bandwagon.jpg">
 <p>我的天呐，我都看不懂，怎么办？尽管如此，我还是似懂非懂的买了一个季度的，说实话当时我都不知道那个付费买的是一个季度的，只有一个到期时间知道是3个月，其他的就是付款了，还是以美元计算的，很庆幸它支持支付宝付款，就这样买完了我还担心是不是盗我支付宝账号的，最后还是担惊受怕的用了起来。至于怎么知道它就是<strong>搬瓦工</strong>的，还是最近买域名的时候，在知乎上面看到一个人回答的时候，我看到了熟悉的截图网页，对，没错就是上面的这张图片，这个时候我才知道原来我用了这么久的VPS就叫<strong>搬瓦工</strong>，请原谅我的见识短浅。。。😭😭😭到现在我买了这个vps，一直使用的是它的一键<code>Shadowsocks</code>功能，因为我就想科学上网。</p>
 <h2 id="搬瓦工使用流程"><a href="#搬瓦工使用流程" class="headerlink" title="搬瓦工使用流程"></a>搬瓦工使用流程</h2><h3 id="购买"><a href="#购买" class="headerlink" title="购买"></a>购买</h3><ul>
 <li><p>官网<br>点击链接<a href="https://bandwagonhost.com/" target="_blank" rel="external">https://bandwagonhost.com/</a>进入官网，注册一个账号。</p>
@@ -170,14 +171,14 @@
 <h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><ul>
 <li>服务列表<br>完成以上步骤后进入官网点击VPS Hosting，选择下拉导航栏的Services里面的My Services</li>
 </ul>
-<img src="http://og3hy5w94.bkt.clouddn.com/static/images/gfw/7.png">
+<img src="http://og3hy5w94.bkt.clouddn.com/static/images/gfw/7.jpg">
 <p>在这里可以看到自己的vps主机信息</p>
 <img src="http://og3hy5w94.bkt.clouddn.com/static/images/gfw/8.png">
 <p>每个vps主机后面都有两个操作按钮Manage和KiwiVM Control Panel</p>
 <ul>
 <li>KiwiVM控制台<br>通过点击KiwiVM Control Panel进入KiwiVM控制台首页</li>
 </ul>
-<img src="http://og3hy5w94.bkt.clouddn.com/static/images/gfw/9.png">
+<img src="http://og3hy5w94.bkt.clouddn.com/static/images/gfw/9.jpg">
 <p>左侧是一些功能导航菜单</p>
 <img src="http://og3hy5w94.bkt.clouddn.com/static/images/gfw/10.png">
 <p>之前说的切换服务器位置就是通过Migrate to another DC来操作的。</p>
