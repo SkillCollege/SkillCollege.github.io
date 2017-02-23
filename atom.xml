@@ -631,9 +631,9 @@
     
       <category term="扫描" scheme="http://www.qingcore.com/tags/%E6%89%AB%E6%8F%8F/"/>
     
-      <category term="zxing" scheme="http://www.qingcore.com/tags/zxing/"/>
-    
       <category term="qrcode" scheme="http://www.qingcore.com/tags/qrcode/"/>
+    
+      <category term="zxing" scheme="http://www.qingcore.com/tags/zxing/"/>
     
   </entry>
   
@@ -708,9 +708,9 @@
     
       <category term="扫描" scheme="http://www.qingcore.com/tags/%E6%89%AB%E6%8F%8F/"/>
     
-      <category term="qrcode" scheme="http://www.qingcore.com/tags/qrcode/"/>
-    
       <category term="zbar" scheme="http://www.qingcore.com/tags/zbar/"/>
+    
+      <category term="qrcode" scheme="http://www.qingcore.com/tags/qrcode/"/>
     
   </entry>
   
